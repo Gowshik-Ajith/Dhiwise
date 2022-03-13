@@ -1,7 +1,7 @@
 import React from "react";
 
-import { useNavigate } from "react-router-dom";
 import { handleSectionNavigation } from "util";
+import { useNavigate } from "react-router-dom";
 import { useGoogleLogin } from "react-google-login";
 import { Column } from "components/Column";
 import { Row } from "components/Row";
@@ -17,7 +17,6 @@ const CRMvendorpageZomentumPage = () => {
   const navigate = useNavigate();
 
   const handleBackNavigation1 = () => navigate(-1);
-
   const { signIn } = useGoogleLogin({
     onSuccess: (res) => {
       alert("Login successfull. 😍");
@@ -29,7 +28,7 @@ const CRMvendorpageZomentumPage = () => {
     accessType: "offline",
     cookiePolicy: "single_host_origin",
   });
-  const handleNavigate2 = () => {
+  const handleNavigate3 = () => {
     window.location.href = "http://www.google.com";
   };
 
@@ -44,7 +43,10 @@ const CRMvendorpageZomentumPage = () => {
               alt="Frame"
             />
             <Row className="3xl:mr-[154px] 3xl:my-[21px] font-circularstd items-center justify-center lg:mr-[100px] lg:my-[14px] mr-[129px] my-[18px] w-[47%] xl:mr-[114px] xl:my-[16px]">
-              <Text className="3xl:my-[15px] 3xl:text-fs16 font-medium lg:my-[10px] lg:text-fs10 my-[13px] text-fs14 text-gray_900 text-left tracking-ls1 xl:my-[11px] xl:text-fs12">{`Features`}</Text>
+              <Text
+                className="common-pointer 3xl:my-[15px] 3xl:text-fs16 font-medium lg:my-[10px] lg:text-fs10 my-[13px] text-fs14 text-gray_900 text-left tracking-ls1 xl:my-[11px] xl:text-fs12"
+                onClick={() => handleSectionNavigation("block1")}
+              >{`Features`}</Text>
               <Text
                 className="common-pointer 3xl:ml-[38px] 3xl:my-[15px] 3xl:text-fs16 font-medium lg:ml-[24px] lg:my-[10px] lg:text-fs10 ml-[32px] my-[13px] text-fs14 text-gray_900 text-left tracking-ls1 xl:ml-[28px] xl:my-[11px] xl:text-fs12"
                 onClick={handleBackNavigation1}
@@ -52,7 +54,7 @@ const CRMvendorpageZomentumPage = () => {
               <Text className="3xl:ml-[38px] 3xl:my-[15px] 3xl:text-fs16 font-medium lg:ml-[24px] lg:my-[10px] lg:text-fs10 ml-[32px] my-[13px] text-fs14 text-gray_900 text-left tracking-ls1 xl:ml-[28px] xl:my-[11px] xl:text-fs12">{`Pricing`}</Text>
               <Text
                 className="common-pointer 3xl:ml-[38px] 3xl:my-[15px] 3xl:text-fs16 font-medium lg:ml-[24px] lg:my-[10px] lg:text-fs10 ml-[32px] my-[13px] text-fs14 text-gray_900 text-left tracking-ls1 xl:ml-[28px] xl:my-[11px] xl:text-fs12"
-                onClick={() => handleSectionNavigation("block1")}
+                onClick={() => handleSectionNavigation("block2")}
               >{`Company`}</Text>
               <SelectBox
                 className="3xl:ml-[38px] 3xl:my-[15px] 3xl:text-fs16 font-medium lg:ml-[24px] lg:my-[10px] lg:text-fs10 ml-[32px] my-[13px] text-fs14 text-gray_900 text-left tracking-ls1 w-[5%] xl:ml-[28px] xl:my-[11px] xl:text-fs12"
@@ -88,7 +90,7 @@ const CRMvendorpageZomentumPage = () => {
               </Column>
               <Button
                 className="common-pointer 2xl:py-[17px] 3xl:mt-[39px] 3xl:px-[30px] 3xl:py-[20px] 3xl:text-fs19 bg-black_900 border-bw font-bold lg:mt-[25px] lg:px-[19px] lg:py-[13px] lg:text-fs12 mt-[33px] mx-[auto] px-[25px] py-[17.375px] text-center text-fs16 text-white_A700 tracking-ls1 w-[21%] xl:mt-[29px] xl:px-[22px] xl:py-[15px] xl:text-fs14"
-                onClick={handleNavigate2}
+                onClick={handleNavigate3}
               >{`Register today`}</Button>
             </Column>
           </Stack>
@@ -98,7 +100,10 @@ const CRMvendorpageZomentumPage = () => {
             alt="Partnerheroim"
           />
           <Column className="3xl:top-[563px] absolute bg-green_A400_3d justify-center lg:top-[364px] self-stretch top-[469px] w-[100%] xl:top-[417px]">
-            <Column className="3xl:mt-[103px] items-center lg:mt-[66px] mt-[86px] mx-[auto] self-stretch w-[100%] xl:mt-[76px]">
+            <Column
+              className="3xl:mt-[103px] items-center lg:mt-[66px] mt-[86px] mx-[auto] self-stretch w-[100%] xl:mt-[76px]"
+              id="block1"
+            >
               <Row className="font-circularstd justify-end mx-[auto] self-stretch w-[100%]">
                 <Text className="3xl:ml-[689px] 3xl:mt-[69px] 3xl:text-fs48 font-medium lg:ml-[446px] lg:mt-[45px] lg:text-fs31 ml-[574px] mt-[58px] text-black_900 text-center text-fs40 tracking-ls1 w-[21%] xl:ml-[510px] xl:mt-[51px] xl:text-fs35">{`List. Sell. Grow`}</Text>
                 <Image
@@ -236,7 +241,7 @@ const CRMvendorpageZomentumPage = () => {
         </Row>
         <footer
           className="2xl:mt-[88px] 3xl:mt-[106px] lg:mt-[68px] mt-[88.31006px] mx-[auto] self-stretch w-[100%] xl:mt-[78px]"
-          id="block1"
+          id="block2"
         >
           <Column className="bg-black_900 items-center justify-center mx-[auto] self-stretch w-[100%]">
             <Row className="3xl:mt-[106px] items-center justify-evenly lg:mt-[69px] mt-[89px] mx-[auto] px-[0] self-stretch w-[100%] xl:mt-[79px]">
